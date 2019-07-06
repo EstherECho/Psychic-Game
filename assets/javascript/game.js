@@ -5,8 +5,6 @@ var guessesLeft= 9;
 var targetLetter = " ";
 var guesses = " ";
 
-const sound = new Audio();
-
 function clearReset() {
     document.querySelector("#guesses-sofar").innerHTML = "Guesses so far: ";
     document.querySelector("#guesses-left").innerHTML = "Guesses left: 9";
@@ -25,16 +23,10 @@ function renderNewLetter() {
     targetLetter= letters[letterIndex];
 }
 
-// function playSound () {
-//     sound.src = "/assets/images/Jeopardy-theme-song.mp3";
-//     sound.play();
-// }
-
 renderLetter();
 console.log(targetLetter);
 
 document.onkeyup = function(event) {
-    // playSound();
     var userGuess = event.key.toUpperCase();
 
     if (userGuess === targetLetter) {
